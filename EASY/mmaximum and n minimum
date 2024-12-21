@@ -1,0 +1,36 @@
+def find_mth_max_and_nth_min(lst, M, N):
+
+    lst_sorted = sorted(lst)
+    
+    # Find the M-th maximum (from the end)
+    mth_max = lst_sorted[-M]  # M-th maximum (M-th largest)
+    
+    # Find the N-th minimum (from the start)
+    nth_min = lst_sorted[N-1]  # N-th minimum (N-th smallest)
+    
+    # Calculate the sum and difference
+    total_sum = mth_max + nth_min
+    difference = mth_max - nth_min
+    
+    return mth_max, nth_min, total_sum, difference
+
+def main():
+    # Read input for the list of numbers
+    lst = list(map(int, input("Enter a list of numbers (space-separated): ").split()))
+    
+    # Read values for M and N
+    M = int(input("Enter the value of M (M-th maximum): "))
+    N = int(input("Enter the value of N (N-th minimum): "))
+    
+    # Get the M-th maximum, N-th minimum, sum and difference
+    mth_max, nth_min, total_sum, difference = find_mth_max_and_nth_min(lst, M, N)
+    
+    # Output the results
+    print(f"{M}-th maximum: {mth_max}")
+    print(f"{N}-th minimum: {nth_min}")
+    print(f"Sum of {M}-th maximum and {N}-th minimum: {total_sum}")
+    print(f"Difference between {M}-th maximum and {N}-th minimum: {difference}")
+
+# Entry point of the program
+if __name__ == "__main__":
+    main()
