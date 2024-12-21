@@ -1,14 +1,23 @@
-num=int(input("Enter the number :"))
-Sum=0
-rem=1
-temp=num
-if(num>1):
-    for i in range (1,num):
+# Function to reverse a number using a loop
+def reverse_number(n):
+    reversed_num = 0
+    
+    # Loop to reverse the number
+    while n > 0:
+        # Extract the last digit and add it to the reversed number
+        last_digit = n % 10
+        reversed_num = reversed_num * 10 + last_digit
         
-      rem=num%10
-      Sum+=rem*rem*rem
-      num=num//10
-      
-    print("Revers of a number :",Sum)
+        # Remove the last digit from the original number
+        n = n // 10
+    
+    return reversed_num
 
+# Input: Get a number from the user
+number = int(input("Enter a number: "))
 
+# Call the function to reverse the number
+reversed_number = reverse_number(number)
+
+# Output the reversed number
+print(f"The reversed number is: {reversed_number}")
